@@ -1,6 +1,6 @@
 .myspecial:hover {
-  -ms-transform: scale(1.08); /* IE 9 */
-  -webkit-transform: scale(1.08); /* Safari 3-8 */
+  -ms-transform: scale(1.08);
+  -webkit-transform: scale(1.08);
   transform: scale(1.08);
 }
 .myspecial {
