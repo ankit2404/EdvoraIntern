@@ -14,7 +14,7 @@ function Home() {
 
   useEffect(() => {
     getData(city, state);
-    if (city != "City" || state != "State") {
+    if (city !== "City" || state !== "State") {
       setIsFilter(true);
     } else {
       setIsFilter(false);

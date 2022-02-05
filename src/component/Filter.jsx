@@ -3,10 +3,8 @@ import "./Filter.css";
 import { v4 as uuidv4 } from "uuid";
 import { useContext, useState } from "react";
 import CompanyContext from "../context/CompanyContext";
-import { useEffect } from "react";
 function Filter({ setCity, setState }) {
   const { state, country, data } = useContext(CompanyContext);
-
   const [stateValue, setStateValue] = useState("State");
   const [cityValue, setCityValue] = useState("City");
 
@@ -14,7 +12,20 @@ function Filter({ setCity, setState }) {
     <>
       <div>
         <div className="card shadow-md compact  side back">
-          <h1 className="header">Filters</h1>
+          <div className="remove">
+            <h1 className="header">Filters</h1>
+            <button
+              className="btn"
+              onClick={() => {
+                setStateValue("State");
+                setCityValue("City");
+                setState("State");
+                setCity("City");
+              }}
+            >
+              Clear
+            </button>
+          </div>
           <hr />
           <div className=" items-center space-x-7 card-body">
             <select className="dropdown">

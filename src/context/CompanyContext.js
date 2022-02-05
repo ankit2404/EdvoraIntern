@@ -47,33 +47,32 @@ export const CompanyProvider = ({ children }) => {
   }, []);
 
   const getData = (city, state) => {
-    const dataCopy = [...data];
-    console.log(dataCopy);
-    if (city != "City" && state != "State") {
+    let dataCopy = data.map((item) => ({
+      product_name: item.product_name,
+      data: [...item.data],
+    }));
+
+    if (city !== "City" && state !== "State") {
       dataCopy.forEach((item) => {
         const itemData = [...item.data];
         item.data = itemData.filter(
-          (i) => i.address.state == state && i.address.city == city
+          (i) => i.address.state === state && i.address.city === city
         );
       });
-    } else if (city != "City") {
+    } else if (city !== "City") {
       dataCopy.forEach((item) => {
         const itemData = [...item.data];
-        item.data = itemData.filter((i) => i.address.city == city);
+        item.data = itemData.filter((i) => i.address.city === city);
       });
-    } else if (state != "State") {
+    } else if (state !== "State") {
       dataCopy.forEach((item) => {
         const itemData = [...item.data];
-        item.data = itemData.filter((i) => i.address.state == state);
+        item.data = itemData.filter((i) => i.address.state === state);
       });
     }
 
     setFilteredData(dataCopy);
   };
-
-  // const filterFunction = async (state, city) => {
-  //   await callAPI(city, state);
-  // }
 
   return (
     <CompanyContext.Provider
