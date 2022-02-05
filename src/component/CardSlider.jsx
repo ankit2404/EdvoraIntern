@@ -12,9 +12,26 @@ function CardSlider({ details }) {
     <div className="sliderBox">
       <div>
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          slidesPerGroup={1}
+          // slidesPerView={4}
+          // spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            500: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1030: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
           loop={false}
           loopFillGroupWithBlank={true}
           pagination={{

@@ -35,3 +35,16 @@ div.content hr {
 .lastComp {
   margin-bottom: 35px;
 }
+
+@media only screen and (max-width: 760px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .comp1 {
+    width: 90%;
+  }
+  .comp2 {
+    width: 90%;
+  }
+}
